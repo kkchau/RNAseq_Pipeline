@@ -1,0 +1,7 @@
+"""
+__authors__: Kevin Chau, 
+__date__: 2019-03-05
+__description__: RNA-Seq alignment and quantification
+"""
+
+import os

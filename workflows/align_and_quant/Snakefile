@@ -1,0 +1,14 @@
+"""
+__authors__: Kevin Chau
+__date__: 2019-03-05
+__description__: RNA-Seq alignment and quantification
+"""
+
+import os
+
+# Sub-Workflows
+
+subworkflow index:
+    workdir: "workflows/index"
+    snakefile: "workflows/index/Snakefile"  # Not required, but helpful
+    configfile: "workflows/index/config.yaml"
