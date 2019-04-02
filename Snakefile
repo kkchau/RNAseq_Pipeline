@@ -16,6 +16,11 @@ if not os.path.exists("log"):
 
 # Sub-Workflows
 
+subworkflow index:
+    workdir: "workflows/index"
+    snakefile: "workflows/index/Snakefile"
+    configfile: "workflows/index/config.yaml"
+
 subworkflow align_and_quant:
     workdir: "workflows/align_and_quant"
     snakefile: "workflows/align_and_quant/Snakefile"
