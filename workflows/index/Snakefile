@@ -1,7 +1,30 @@
 """
-__authors__: Kevin Chau, 
+__authors__: Kevin Chau, Hanqing Zhao,
 __date__: 2019-03-05
 __description__: RNA-Seq alignment and quantification
 """
 
 import os
+
+configfile: "config.yaml"
+
+# Setup pipeline directories
+if not os.path.exists("data"):
+    os.makedirs("data")
+if not os.path.exists("log"):
+    os.makedirs("log")
+
+rule star_index:
+    input:
+        config["GENOME_FASTA"],
+        config["GENOME_GTF"]
+    output:
+        config["GENOME_DIR"]
+    shell:
+        "STAR --runThreadN 16 --runMode genomeGenerate ",
+        "--genomeDir ",
+        config["GENOME_DIR"],
+        "--genomeFastaFiles ",
+        config["GENOME_FASTA"],
+        "--sjdbGTFfile ",
+        config["GENOME_GTF"]
