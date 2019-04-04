@@ -12,3 +12,26 @@ subworkflow index:
     workdir: "workflows/index"
     snakefile: "workflows/index/Snakefile"  # Not required, but helpful
     configfile: "workflows/index/config.yaml"
+
+
+rule run_star
+    input:
+        config["OUTPUT1"]
+        config["OUTPUT2"]
+    output:
+        #the directory of the prefix
+    shell:
+        "STAR --genomeDir ",config["GENOME_DIR"],
+        " --runThreadN 12"
+        " --readFilesIn ", config["OUTPUT1"], config["OUTPUT2"],
+        " --outFilterType BySJout",
+        " --outFilterMultimapNmax 20",
+        " --alignSJoverhangMin 8",
+        " --alignSJDBoverhangMin 1",
+        " --outFilterMismatchNmax 999",
+        " --alignIntronMin 20 --alignIntronMax 1000000",
+        " --alignMatesGapMax 1000000 --outSAMunmapped Within",
+        " --outSAMattributes NH HI AS NM MD",
+        " --outFilterMismatchNoverReadLmax 0.04 --sjdbScore 1",
+        " --outSAMtype BAM SortedByCoordinate --quantMode TranscriptomeSAM",
+        " --outFileNamePrefix",config["PREFIX"]

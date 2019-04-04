@@ -1,3 +1,8 @@
 GENOME_DIR : /Users/zhq/RNAseq_Pipeline/references
 GENOME_FASTA : /Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa
 GENOME_GTF : /Users/zhq/RNAseq_Pipeline/references/gencode.vM20.annotation.gtf
+
+READ1:
+READ2:
+OUTPUT1:
+OUTPUT2:

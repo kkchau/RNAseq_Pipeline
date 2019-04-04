@@ -14,7 +14,18 @@ if not os.path.exists("data"):
 if not os.path.exists("log"):
     os.makedirs("log")
 
-rule star_index:
+rule cutadapt_trim
+    input:
+        config["READ1"]
+        config["READ2"]
+    output:
+        config["OUTPUT1"]
+        config["OUTPUT2"]
+    shell:
+        "cutadapt --minimum-length=5",
+        " --output "
+
+rule star_refIndex:
     input:
         config["GENOME_FASTA"],
         config["GENOME_GTF"]
@@ -28,3 +39,13 @@ rule star_index:
         config["GENOME_FASTA"],
         "--sjdbGTFfile ",
         config["GENOME_GTF"]
+
+rule RSEM:
+    input:
+        #the output from STAR
+        config["SAM/BAM"]
+        config["SAMPLE_NAME"]
+    output:
+        config[]
+    shell:
+        "rsem"
