@@ -1,5 +1,5 @@
 """
-__authors__: Kevin Chau
+__authors__: Kevin Chau, Weixiu Dong, Hanqing Zhao
 __date__: 2019-03-05
 __description__: RNA-Seq alignment and quantification
 """
@@ -16,14 +16,17 @@ subworkflow index:
 
 rule run_star
     input:
-        config["OUTPUT1"]
-        config["OUTPUT2"]
+        os.path.join(config["GENOME_DIR"], "STAR_INDEX", "Genome")
+        os.path.join(config["GENOME_DIR"], "STAR_INDEX", "SA")
+        os.path.join(config["GENOME_DIR"], "STAR_INDEX", "SAindex")
+        os.path.join("../../data/",config["FASTQ_prefix"] + ".1.trimmed.fastq")
+        os.path.join("../../data/",config["FASTQ_prefix"] + ".2.trimmed.fastq")
     output:
-        #the directory of the prefix
+        os.path.join("../../data/STAR_ALIGN_", config["FASTQ_prefix"] + ".bam")
     shell:
-        "STAR --genomeDir ",config["GENOME_DIR"],
+        "STAR --genomeDir ", os.path.join(config["GENOME_DIR"], "STAR_INDEX"),
         " --runThreadN 12"
-        " --readFilesIn ", config["OUTPUT1"], config["OUTPUT2"],
+        " --readFilesIn ../../data/",
         " --outFilterType BySJout",
         " --outFilterMultimapNmax 20",
         " --alignSJoverhangMin 8",
@@ -34,4 +37,4 @@ rule run_star
         " --outSAMattributes NH HI AS NM MD",
         " --outFilterMismatchNoverReadLmax 0.04 --sjdbScore 1",
         " --outSAMtype BAM SortedByCoordinate --quantMode TranscriptomeSAM",
-        " --outFileNamePrefix",config["PREFIX"]
+        " --outFileNamePrefix ", os.path.join(config["GENOME_DIR"], "STAR_ALIGN_")
