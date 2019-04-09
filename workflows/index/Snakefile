@@ -1,5 +1,5 @@
 """
-__authors__: Kevin Chau, Hanqing Zhao,
+__authors__: Kevin Chau, Hanqing Zhao, Weixiu Dong
 __date__: 2019-03-05
 __description__: RNA-Seq alignment and quantification
 """
@@ -14,17 +14,46 @@ if not os.path.exists("data"):
 if not os.path.exists("log"):
     os.makedirs("log")
 
-rule star_index:
+rule cutadapt_trim
     input:
-        config["GENOME_FASTA"],
-        config["GENOME_GTF"]
+        os.path.join("../../source/",config["FASTQ_prefix"] + "1.fastq")
+        os.patn.join("../../source/",config["FASTQ_prefix"] + "2.fastq")
     output:
-        config["GENOME_DIR"]
+        os.path.join("../../data/",config["FASTQ_prefix"] + ".1.trimmed.fastq")
+        os.path.join("../../data/",config["FASTQ_prefix"] + ".2.trimmed.fastq")
+    shell:
+        "cutadapt --minimum-length=5",
+        " --output ", output[0],
+        " --paired-output ", output[1]
+        " -A XXX -q 30 ",
+        input
+
+if not os.path.exists(os.path.join(config["GENOME_DIR"], "STAR_INDEX")):
+    os.makedirs(os.path.join(config["GENOME_DIR"], "STAR_INDEX"))
+
+rule star_refIndex:
+    input:
+        os.path.join(config["GENOME_DIR"], config["GENOME_FASTA"])
+        os.path.join(config["GENOME_DIR"], config["GENOME_GTF"])
+    output:
+        os.path.join(config["GENOME_DIR"], "STAR_INDEX", "STAR_INDEX_Genome"),
+        os.path.join(config["GENOME_DIR"], "STAR_INDEX", "STAR_INDEX_SA"),
+        os.path.join(config["GENOME_DIR"], "STAR_INDEX", "STAR_INDEX_SAindex")
     shell:
         "STAR --runThreadN 16 --runMode genomeGenerate ",
         "--genomeDir ",
-        config["GENOME_DIR"],
+        os.path.join(config["GENOME_DIR"],"STAR_INDEX"),
         "--genomeFastaFiles ",
-        config["GENOME_FASTA"],
+        os.path.join(config["GENOME_DIR"], config["GENOME_FASTA"]),
         "--sjdbGTFfile ",
-        config["GENOME_GTF"]
+        os.path.join(config["GENOME_DIR"], config["GENOME_GTF"])
+
+rule RSEM:
+    input:
+        #the output from STAR
+        config["SAM/BAM"]
+        config["SAMPLE_NAME"]
+    output:
+        config[]
+    shell:
+        "rsem"
