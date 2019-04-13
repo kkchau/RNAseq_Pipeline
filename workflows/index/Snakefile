@@ -30,17 +30,15 @@ if not os.path.exists(os.path.join(config["GENOME_DIR"], "STAR_INDEX")):
 
 rule star_refIndex:
     input:
-        os.path.join(config["GENOME_DIR"], config["GENOME_FASTA"])
-        os.path.join(config["GENOME_DIR"], config["GENOME_GTF"])
+        os.path.join(config["GENOME_DIR"], config["GENOME_FASTA"]),
+        os.path.join(config["GENOME_DIR"], config["GENOME_GTF"]),
+        os.path.join(config["GENOME_DIR"],"STAR_INDEX/")
     output:
         os.path.join(config["GENOME_DIR"], "STAR_INDEX", "STAR_INDEX_Genome"),
         os.path.join(config["GENOME_DIR"], "STAR_INDEX", "STAR_INDEX_SA"),
         os.path.join(config["GENOME_DIR"], "STAR_INDEX", "STAR_INDEX_SAindex")
     shell:
-        "STAR --runThreadN 16 --runMode genomeGenerate ",
-        "--genomeDir ",
-        os.path.join(config["GENOME_DIR"],"STAR_INDEX"),
-        "--genomeFastaFiles ",
-        os.path.join(config["GENOME_DIR"], config["GENOME_FASTA"]),
-        "--sjdbGTFfile ",
-        os.path.join(config["GENOME_DIR"], config["GENOME_GTF"])
+        "STAR --runThreadN 16 --runMode genomeGenerate "
+        "--genomeDir {input[2]} "
+        "--genomeFastaFiles {input[0]} "
+        "--sjdbGTFfile {input[1]}"
