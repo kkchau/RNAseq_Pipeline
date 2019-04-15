@@ -8,10 +8,10 @@ import os
 configfile: "../../config.yaml"
 # Sub-Workflows
 
-subworkflow index:
-    workdir: "workflows/index"
-    snakefile: "workflows/index/Snakefile"  # Not required, but helpful
-    configfile: "workflows/index/config.yaml"
+subworkflow align_and_quant:
+    workdir: "workflows/align_and_quant"
+    snakefile: "workflows/align_and_quant/Snakefile"  # Not required, but helpful
+    configfile: "../../config.yaml"
 
 if not os.path.exists("../../data/STAR_ALIGN"):
     os.makedirs("../../data/STAR_ALIGN")
