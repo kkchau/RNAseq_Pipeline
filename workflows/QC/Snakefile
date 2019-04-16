@@ -1,0 +1,48 @@
+"""
+__authors__: Kevin Chau, Weixiu Dong, Hanqing Zhao
+__date__: 2019-03-05
+__description__: RNA-Seq alignment and quantification
+"""
+
+import os
+configfile: "../../config.yaml"
+# Sub-Workflows
+
+subworkflow QC:
+    workdir: "workflows/QC"
+    snakefile: "workflows/QC/Snakefile"  # Not required, but helpful
+    configfile: "../../config.yaml"
+
+if not os.path.exists("../../data/QC"):
+    os.makedirs("../../data/QC")
+
+rule picard_tools:
+    input:
+
+    output:
+
+    shell:
+
+rule feature_counts:
+    input:
+        os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".bam"),
+        os.path.join(config["GENOME_DIR"], config["GENOME_GTF"])
+    output:
+        os.path.join("../../data/QC/", config["FASTQS"]["prefix"] + ".counts.txt")
+    shell:
+        "featureCounts -p -C -t exon -g gene_id -M --fraction -s 2 "
+        "-a {input[1]} -o {output} {input[0]}"
+
+rule RNA_seQC:
+    input:
+
+    output:
+
+    shell:
+
+rule Mt_percentage:
+    input:
+
+    output:
+
+    shell:
