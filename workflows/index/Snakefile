@@ -34,9 +34,9 @@ rule star_refIndex:
         os.path.join(config["GENOME_DIR"], config["GENOME_GTF"]),
         os.path.join(config["GENOME_DIR"],"STAR_INDEX/")
     output:
-        os.path.join(config["GENOME_DIR"], "STAR_INDEX", "STAR_INDEX_Genome"),
-        os.path.join(config["GENOME_DIR"], "STAR_INDEX", "STAR_INDEX_SA"),
-        os.path.join(config["GENOME_DIR"], "STAR_INDEX", "STAR_INDEX_SAindex")
+        os.path.join(config["GENOME_DIR"], "STAR_INDEX", "Genome"),
+        os.path.join(config["GENOME_DIR"], "STAR_INDEX", "SA"),
+        os.path.join(config["GENOME_DIR"], "STAR_INDEX", "SAindex")
     shell:
         "STAR --runThreadN 16 --runMode genomeGenerate "
         "--genomeDir {input[2]} "
