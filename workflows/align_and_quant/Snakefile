@@ -40,4 +40,4 @@ rule run_star:
         " --outSAMattributes NH HI AS NM MD"
         " --outFilterMismatchNoverReadLmax 0.04 --sjdbScore 1"
         " --outSAMtype BAM SortedByCoordinate --quantMode TranscriptomeSAM"
-        " --outFileNamePrefix ../../data/STAR_ALIGN/star_align_"
+        " --outFileNamePrefix ../../data/STAR_ALIGN/"+config["FASTQS"]["prefix"]+".STAR"
