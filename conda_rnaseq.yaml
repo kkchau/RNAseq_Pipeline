@@ -8,5 +8,5 @@ dependencies:
   - rna-seqc
   - subread
   - cutadapt
-  - star
+  - star=2.6.1d
   - rsem

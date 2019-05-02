@@ -175,26 +175,26 @@ soloOutFileNames                  Solo.out/   genes.tsv   barcodes.tsv   matrix.
 soloFeatures                      Gene   
 soloUMIdedup                      1MM_All   
 ##### Command Line:
-STAR --runThreadN 16 --runMode genomeGenerate --genomeDir /Users/zhq/RNAseq_Pipeline/references/STAR_INDEX/ --genomeFastaFiles /Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa --sjdbGTFfile /Users/zhq/RNAseq_Pipeline/references/gencode.vM20.annotation.gtf
+STAR --runThreadN 16 --runMode genomeGenerate --genomeDir /Volumes/KINGSTON/Undergraduates/STAR_GRCh37 --genomeFastaFiles /Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa --sjdbGTFfile /Users/zhq/RNAseq_Pipeline/references/gencode.v30.annotation.gtf
 ##### Initial USER parameters from Command Line:
 ###### All USER parameters from Command Line:
 runThreadN                    16     ~RE-DEFINED
 runMode                       genomeGenerate     ~RE-DEFINED
-genomeDir                     /Users/zhq/RNAseq_Pipeline/references/STAR_INDEX/     ~RE-DEFINED
-genomeFastaFiles              /Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa        ~RE-DEFINED
-sjdbGTFfile                   /Users/zhq/RNAseq_Pipeline/references/gencode.vM20.annotation.gtf     ~RE-DEFINED
+genomeDir                     /Volumes/KINGSTON/Undergraduates/STAR_GRCh37     ~RE-DEFINED
+genomeFastaFiles              /Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa        ~RE-DEFINED
+sjdbGTFfile                   /Users/zhq/RNAseq_Pipeline/references/gencode.v30.annotation.gtf     ~RE-DEFINED
 ##### Finished reading parameters from all sources
 
 ##### Final user re-defined parameters-----------------:
 runMode                           genomeGenerate
 runThreadN                        16
-genomeDir                         /Users/zhq/RNAseq_Pipeline/references/STAR_INDEX/
-genomeFastaFiles                  /Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa   
-sjdbGTFfile                       /Users/zhq/RNAseq_Pipeline/references/gencode.vM20.annotation.gtf
+genomeDir                         /Volumes/KINGSTON/Undergraduates/STAR_GRCh37
+genomeFastaFiles                  /Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa   
+sjdbGTFfile                       /Users/zhq/RNAseq_Pipeline/references/gencode.v30.annotation.gtf
 
 -------------------------------
 ##### Final effective command line:
-STAR   --runMode genomeGenerate   --runThreadN 16   --genomeDir /Users/zhq/RNAseq_Pipeline/references/STAR_INDEX/   --genomeFastaFiles /Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa      --sjdbGTFfile /Users/zhq/RNAseq_Pipeline/references/gencode.vM20.annotation.gtf
+STAR   --runMode genomeGenerate   --runThreadN 16   --genomeDir /Volumes/KINGSTON/Undergraduates/STAR_GRCh37   --genomeFastaFiles /Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa      --sjdbGTFfile /Users/zhq/RNAseq_Pipeline/references/gencode.v30.annotation.gtf
 
 ##### Final parameters after user input--------------------------------:
 versionGenome                     2.7.0d
@@ -204,9 +204,9 @@ runMode                           genomeGenerate
 runThreadN                        16
 runDirPerm                        User_RWX
 runRNGseed                        777
-genomeDir                         /Users/zhq/RNAseq_Pipeline/references/STAR_INDEX/
+genomeDir                         /Volumes/KINGSTON/Undergraduates/STAR_GRCh37
 genomeLoad                        NoSharedMemory
-genomeFastaFiles                  /Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa   
+genomeFastaFiles                  /Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa   
 genomeChainFiles                  -   
 genomeSAindexNbases               14
 genomeChrBinNbits                 18
@@ -344,7 +344,7 @@ chimMultimapScoreRange            1
 chimNonchimScoreDropMin           20
 chimOutJunctionFormat             0   
 sjdbFileChrStartEnd               -   
-sjdbGTFfile                       /Users/zhq/RNAseq_Pipeline/references/gencode.vM20.annotation.gtf
+sjdbGTFfile                       /Users/zhq/RNAseq_Pipeline/references/gencode.v30.annotation.gtf
 sjdbGTFchrPrefix                  -
 sjdbGTFfeatureExon                exon
 sjdbGTFtagExonParentTranscript    transcript_id
@@ -373,18 +373,9 @@ soloUMIdedup                      1MM_All
 ----------------------------------------
 
 Finished loading and checking parameters
-Apr 12 17:27:38 ... starting to generate Genome files
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 0  "chr1" chrStart: 0
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 1  "chr2" chrStart: 195559424
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 2  "chr3" chrStart: 377749504
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 3  "chr4" chrStart: 537919488
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 4  "chr5" chrStart: 694681600
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 5  "chr6" chrStart: 846725120
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 6  "chr7" chrStart: 996671488
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 7  "chr8" chrStart: 1142161408
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 8  "chr9" chrStart: 1271660544
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 9  "chr10" chrStart: 1396441088
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 10  "chr11" chrStart: 1527250944
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 11  "chr12" chrStart: 1649410048
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 12  "chr13" chrStart: 1769734144
-/Users/zhq/RNAseq_Pipeline/references/GRCm38.p6.genome.fa : chr # 13  "chr14" chrStart: 1890320384
+Apr 29 12:47:45 ... starting to generate Genome files
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 0  "chr1" chrStart: 0
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 1  "chr2" chrStart: 249036800
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 2  "chr3" chrStart: 491257856
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 3  "chr4" chrStart: 689700864
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 4  "chr5" chrStart: 880017408

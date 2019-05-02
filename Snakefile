@@ -1,5 +1,5 @@
 """
-__authors__: Kevin Chau
+__authors__: Kevin Chau, Hanqing Zhao
 __date__: 2019-03-05
 __description__: Perform RNA-Seq quality control, alignment, and quantification
 """
@@ -15,13 +15,34 @@ if not os.path.exists("log"):
     os.makedirs("log")
 
 # Sub-Workflows
+#subworkflow quantification:
+#    workdir: "workflows/quantification"
+#    snakefile: "workflows/quantification/Snakefile
 
-subworkflow index:
-    workdir: "workflows/index"
-    snakefile: "workflows/index/Snakefile"
-    configfile: "workflows/index/config.yaml"
+#subworkflow align_QC:
+#    workdir: "workflows/align_QC"
+#    snakefile: "workflows/align_QC/Snakefile"
 
-subworkflow align_and_quant:
-    workdir: "workflows/align_and_quant"
-    snakefile: "workflows/align_and_quant/Snakefile"
-    configfile: "workflows/align_and_quant/config.yaml"
+subworkflow alignment:
+    workdir: "workflows/alignment"
+    snakefile: "workflows/alignment/Snakefile"
+
+rule all:
+    input:
+        alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.sortedByCoord.out.bam")),
+        alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.toTranscriptome.out_sorted.bam"))
+#        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".multiple_metrics.txt"),
+#        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".marked_duplicates.bam"),
+#        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".marked_dup_metrics.txt"),
+#        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".RNA_Metrics.txt"),
+#        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".insert_size_metrics.txt"),
+#        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".insert_size_histogram.pdf"),
+#        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".CollectalignmentSummaryMetricsoutput.txt"),
+#        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".GC_bias_metrics.pdf"),
+#        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".summary_metrics.txt"),
+#        align_QC(os.path.join("../../data/QC", config["FASTQS"]["prefix"] + ".counts.txt")),
+#        align_QC("../../log/"+config["FASTQS"]["prefix"]+".featureCounts.out"),
+#        align_QC("../../data/STAR_ALIGN/"+config["FASTQS"]["prefix"]+".STARAligned.sortedByCoord.out.bam.bai"),
+#        align_QC(os.path.join("../../data/QC", config["FASTQS"]["prefix"] + ".testReport/")),
+#        align_QC("../../log/"+config["FASTQS"]["prefix"]+".RNA-SeQC.out"),
+#        align_QC(os.path.join("../../log", config["FASTQS"]["prefix"] + ".Mt.txt"))
