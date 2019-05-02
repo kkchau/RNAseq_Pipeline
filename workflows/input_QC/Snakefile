@@ -1,0 +1,7 @@
+"""
+__authors__: Kevin Chau, Hanqing Zhao
+__date__: 2019-03-05
+__description__: RNA-Seq input quality control
+"""
+import os
+configfile: "../../config.yaml"

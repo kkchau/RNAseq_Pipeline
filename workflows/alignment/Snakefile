@@ -1,0 +1,58 @@
+"""
+__authors__: Kevin Chau, Weixiu Dong, Hanqing Zhao
+__date__: 2019-03-05
+__description__: RNA-Seq alignment
+"""
+
+import os
+configfile: "../../config.yaml"
+# Sub-Workflows
+
+subworkflow index:
+    workdir: "../index"
+    snakefile: "../index/Snakefile"  # Not required, but helpful
+    configfile: "../../config.yaml"
+
+subworkflow input_QC:
+    workdir: "../input_QC"
+    snakefile: "../input_QC/Snakefile"  # Not required, but helpful
+    configfile: "../../config.yaml"
+
+
+if not os.path.exists("../../data/STAR_ALIGN"):
+    os.makedirs("../../data/STAR_ALIGN")
+
+rule run_star:
+    input:
+        index(os.path.join(config["DISK_DIR"], "Genome")),
+        index(os.path.join(config["DISK_DIR"], "SA")),
+        index(os.path.join(config["DISK_DIR"], "SAindex")),
+        index(os.path.join("data",config["FASTQS"]["read1"] + ".trimmed.fastq")),
+        index(os.path.join("data",config["FASTQS"]["read2"] + ".trimmed.fastq")),
+        os.path.join(config["DISK_DIR"])
+        #os.path.join(config["GENOME_DIR"], "STAR_INDEX")
+    params:
+        prefix = os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STAR")
+    output:
+        os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.toTranscriptome.out_sorted.bam"),
+        os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.sortedByCoord.out.bam")
+    run:
+        shell("STAR --genomeDir {input[5]}"
+        " --runThreadN 12"
+        " --readFilesIn {input[3]} {input[4]}"
+        " --outFilterType BySJout"
+        " --outFilterMultimapNmax 20"
+        " --alignSJoverhangMin 8"
+        " --alignSJDBoverhangMin 1"
+        " --outFilterMismatchNmax 999"
+        " --alignIntronMin 20 --alignIntronMax 1000000"
+        " --alignMatesGapMax 1000000 --outSAMunmapped Within"
+        " --outSAMattributes NH HI AS NM MD"
+        " --outFilterMismatchNoverReadLmax 0.04 --sjdbScore 1"
+        " --outSAMtype BAM SortedByCoordinate --quantMode TranscriptomeSAM"
+        " --outFileNamePrefix {params.prefix}")
+
+        shell("cat < (samtools view -H {params.prefix}Aligned.toTranscriptome.out.bam) > "
+        "(samtools view -@ 1 {params.prefix}Aligned.toTranscriptome.out.bam "
+        "| awk '{printf '%s', $0 ' '; getline; print}' | sort -S 10000000 -T ./ | tr ' ' '\n' ) "
+        "| samtools view -@ 1 -bS - > {output[0]}")

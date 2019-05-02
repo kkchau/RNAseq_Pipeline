@@ -1,6 +1,7 @@
 GENOME_DIR : /Users/zhq/RNAseq_Pipeline/references/
-GENOME_FASTA : GRCm38.p6.genome.fa
-GENOME_GTF : gencode.vM20.annotation.gtf
+GENOME_FASTA : GRCh38.p12.genome.fa
+GENOME_GTF : gencode.v30.annotation.gtf
+DISK_DIR: /Volumes/KINGSTON/Undergraduates/STAR_GRCh37
 
 FASTQS: 
     read1: "test_reads_R1"
