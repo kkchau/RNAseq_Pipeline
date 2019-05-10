@@ -23,6 +23,8 @@ if not os.path.exists("../../data/STAR_ALIGN"):
     os.makedirs("../../data/STAR_ALIGN")
 
 rule run_star:
+    """
+    """
     input:
         index(os.path.join(config["DISK_DIR"], "Genome")),
         index(os.path.join(config["DISK_DIR"], "SA")),
@@ -34,9 +36,10 @@ rule run_star:
     params:
         prefix = os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STAR")
     output:
-        os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.sortedByCoord.out.bam")
+        #os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.sortedByCoord.out.bam")
+        os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.toTranscriptome.out.bam")
     run:
-        shell("STAR --genomeDir {input[5]}"
+        "STAR --genomeDir {input[5]}"
         " --runThreadN 4"
         " --readFilesIn {input[3]} {input[4]}"
         " --outFilterType BySJout"
@@ -49,7 +52,7 @@ rule run_star:
         " --outSAMattributes NH HI AS NM MD"
         " --outFilterMismatchNoverReadLmax 0.04 --sjdbScore 1"
         " --outSAMtype BAM SortedByCoordinate --quantMode TranscriptomeSAM"
-        " --outFileNamePrefix {params.prefix}")
+        " --outFileNamePrefix {params.prefix}"
 
 rule samtools_view:
     input:

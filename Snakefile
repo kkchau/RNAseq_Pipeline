@@ -29,7 +29,7 @@ subworkflow alignment:
 
 rule all:
     input:
-        alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.sortedByCoord.out.bam")),
+        #alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.sortedByCoord.out.bam")),
         alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.toTranscriptome.out_sorted.bam"))
 #        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".multiple_metrics.txt"),
 #        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".marked_duplicates.bam"),

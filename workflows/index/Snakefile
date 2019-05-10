@@ -28,18 +28,6 @@ rule cutadapt_trim:
 if not os.path.exists(os.path.join(config["GENOME_DIR"], "STAR_INDEX")):
     os.makedirs(os.path.join(config["GENOME_DIR"], "STAR_INDEX"))
 
-# rule star_refIndex_mock:
-#     input:
-#         os.path.join(config["GENOME_DIR"], config["GENOME_FASTA"]),
-#         os.path.join(config["GENOME_DIR"], config["GENOME_GTF"])
-#     params:
-#         outdir = os.path.join(config["DISK_DIR"])
-#     output:
-#         os.path.join(config["DISK_DIR"], "Genome"),
-#         os.path.join(config["DISK_DIR"], "SA"),
-#         os.path.join(config["DISK_DIR"], "SAindex")
-#     shell:
-#         "echo MOCK"
 
 rule star_refIndex:
     input:
