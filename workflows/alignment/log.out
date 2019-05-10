@@ -1,0 +1,44 @@
+Building DAG of jobs...
+Executing subworkflow index.
+Building DAG of jobs...
+Nothing to be done.
+Subworkflow input_QC: Nothing to be done.
+Executing main workflow.
+Using shell: /bin/bash
+Provided cores: 1
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	run_star
+	1
+
+[Thu May  9 15:36:04 2019]
+rule run_star:
+    input: /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/Genome, /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA, /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SAindex, /oasis/scratch/comet/kkchau/temp_project/RNAseq_Pipeline/workflows/index/data/test_reads_R1.trimmed.fastq, /oasis/scratch/comet/kkchau/temp_project/RNAseq_Pipeline/workflows/index/data/test_reads_R2.trimmed.fastq, /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX
+    output: ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out_sorted.bam, ../../data/STAR_ALIGN/test_reads.STARAligned.sortedByCoord.out.bam
+    jobid: 0
+
+May 09 15:36:04 ..... started STAR run
+May 09 15:36:04 ..... loading genome
+May 09 15:37:44 ..... started mapping
+May 09 15:37:48 ..... finished mapping
+May 09 15:37:48 ..... started sorting BAM
+May 09 15:38:33 ..... finished successfully
+/bin/bash: -c: line 0: syntax error near unexpected token `('
+/bin/bash: -c: line 0: `set -euo pipefail;  cat < (samtools view -H ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out.bam) > samtools view -@ 1 ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out.bam | awk '{printf '%s', $0 ' '; getline; print}' | sort -S 10000000 -T ./ | tr ' ' ''
+[Thu May  9 15:38:34 2019]
+Error in rule run_star:
+    jobid: 0
+    output: ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out_sorted.bam, ../../data/STAR_ALIGN/test_reads.STARAligned.sortedByCoord.out.bam
+
+RuleException:
+CalledProcessError in line 55 of /oasis/scratch/comet/kkchau/temp_project/RNAseq_Pipeline/workflows/alignment/Snakefile:
+Command 'set -euo pipefail;  cat < (samtools view -H ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out.bam) > samtools view -@ 1 ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out.bam | awk '{printf '%s', $0 ' '; getline; print}' | sort -S 10000000 -T ./ | tr ' ' '
+' ) | samtools view -@ 1 -bS - > ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out_sorted.bam' returned non-zero exit status 1.
+  File "/oasis/scratch/comet/kkchau/temp_project/RNAseq_Pipeline/workflows/alignment/Snakefile", line 55, in __rule_run_star
+  File "/home/kkchau/miniconda3/envs/rnaseq/lib/python3.6/concurrent/futures/thread.py", line 56, in run
+Removing output files of failed job run_star since they might be corrupted:
+../../data/STAR_ALIGN/test_reads.STARAligned.sortedByCoord.out.bam
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+slurmstepd: Exceeded step memory limit at some point.
