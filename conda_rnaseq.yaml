@@ -10,3 +10,4 @@ dependencies:
   - cutadapt
   - star=2.6.1d
   - rsem
+  - samtools=1.9
