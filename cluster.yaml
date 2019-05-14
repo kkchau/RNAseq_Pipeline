@@ -1,0 +1,13 @@
+__default__: 
+    partition: "shared"
+    time: "01:00:00"
+    mem: "5G"
+    log: "/home/kkchau/projects/RNAseq_Pipeline/log/{rule}.{wildcards}.out"
+
+star_refIndex:
+    time: "15:00:00"
+    mem: "50G"
+
+run_star:
+    time: "10:00:00"
+    mem: "50G"

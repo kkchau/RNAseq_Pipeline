@@ -1,0 +1,58 @@
+Building DAG of jobs...
+Unlocking working directory.
+Building DAG of jobs...
+Unlocking working directory.
+Building DAG of jobs...
+Unlocking working directory.
+Building DAG of jobs...
+Unlocking working directory.
+Building DAG of jobs...
+Unlocking working directory.
+Building DAG of jobs...
+Executing subworkflow alignment.
+Building DAG of jobs...
+Executing subworkflow index.
+Building DAG of jobs...
+Nothing to be done.
+Complete log: /oasis/scratch/comet/kkchau/temp_project/RNAseq_Pipeline/workflows/index/.snakemake/log/2019-05-13T120922.685194.snakemake.log
+Subworkflow input_QC: Nothing to be done.
+Executing main workflow.
+Using shell: /bin/bash
+Provided cluster nodes: 999
+Job counts:
+	count	jobs
+	1	run_star
+	1	samtools_view
+	2
+
+[Mon May 13 12:09:32 2019]
+rule run_star:
+    input: /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/Genome, /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA, /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SAindex, /oasis/scratch/comet/kkchau/temp_project/RNAseq_Pipeline/workflows/index/data/test_reads_R1.trimmed.fastq, /oasis/scratch/comet/kkchau/temp_project/RNAseq_Pipeline/workflows/index/data/test_reads_R2.trimmed.fastq, /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX
+    output: ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out.bam
+    jobid: 1
+
+Submitted job 1 with external jobid 'Submitted batch job 23410197'.
+[Mon May 13 12:14:33 2019]
+Finished job 1.
+1 of 2 steps (50%) done
+
+[Mon May 13 12:14:33 2019]
+rule samtools_view:
+    input: ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out.bam
+    output: ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out_sorted.bam
+    jobid: 0
+
+Submitted job 0 with external jobid 'Submitted batch job 23410452'.
+[Mon May 13 12:15:03 2019]
+Error in rule samtools_view:
+    jobid: 0
+    output: ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out_sorted.bam
+    shell:
+        cat < (samtools view -H ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out.bam) > (samtools view -@ 1 ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out.bam | awk '{printf '%s', $0 ' '; getline; print}' | sort -S 10000000 -T ./ | tr ' ' '
+' ) | samtools view -@ 1 -bS - > ../../data/STAR_ALIGN/test_reads.STARAligned.toTranscriptome.out_sorted.bam
+    cluster_jobid: Submitted batch job 23410452
+
+Error executing rule samtools_view on cluster (jobid: 0, external: Submitted batch job 23410452, jobscript: /oasis/scratch/comet/kkchau/temp_project/RNAseq_Pipeline/workflows/alignment/.snakemake/tmp.8_wpwib4/snakejob.samtools_view.0.sh). For detailed error see the cluster log.
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /oasis/scratch/comet/kkchau/temp_project/RNAseq_Pipeline/workflows/index/.snakemake/log/2019-05-13T120922.685194.snakemake.log

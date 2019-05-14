@@ -1,8 +1,7 @@
-#config file header:
-GENOME_DIR : /Users/zhq/RNAseq_Pipeline/references/
+GENOME_DIR : /home/kkchau/projects/RNAseq_Pipeline/references/
 GENOME_FASTA : GRCh38.p12.genome.fa
 GENOME_GTF : gencode.v30.annotation.gtf
-DISK_DIR: /Volumes/KINGSTON/Undergraduates/
+DISK_DIR: /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX
 
 FASTQS: 
     read1: "test_reads_R1"
