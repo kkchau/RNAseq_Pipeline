@@ -1,7 +1,9 @@
 """
 __authors__: Kevin Chau, Hanqing Zhao, Weixiu Dong
-__date__: 2019-03-05
-__description__: RNA-Seq alignment and quantification
+__date__: 2019-05-21
+__description__: This snakefile is for trimming the input sequence reads by cutadapt, and
+generating index file, which will be used during alignment to rapidly look up where
+each read came from, by STAR.
 """
 
 import os
@@ -15,6 +17,11 @@ if not os.path.exists("log"):
     os.makedirs("log")
 
 rule cutadapt_trim:
+    """
+    This rule is for trimming the input sequence reads fastq file to remove the adapter,
+    primer, poly-A tail and other unwanted sequences.
+    The file takes the raw fastq files as input and output the trimmed fastq files.
+    """
     input:
         read1 = os.path.join("../../source", config["FASTQS"]["read1"] + ".fastq"),
         read2 = os.path.join("../../source", config["FASTQS"]["read2"] + ".fastq")
@@ -25,11 +32,15 @@ rule cutadapt_trim:
         "cutadapt --minimum-length=5 --output {output[0]} "
         "--paired-output {output[1]} -A XXX -q 30 {input}"
 
+#Create the output directory for STAR if it doesn't exists.
 if not os.path.exists(os.path.join(config["GENOME_DIR"], "STAR_INDEX")):
     os.makedirs(os.path.join(config["GENOME_DIR"], "STAR_INDEX"))
 
-
 rule star_refIndex:
+    """
+    This rule creates the index files from the reference genome fasta file and
+    annotation gtf file. It outputs the three files which will be used in alignment.
+    """
     input:
         os.path.join(config["GENOME_DIR"], config["GENOME_FASTA"]),
         os.path.join(config["GENOME_DIR"], config["GENOME_GTF"])

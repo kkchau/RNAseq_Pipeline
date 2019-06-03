@@ -1,7 +1,9 @@
 """
 __authors__: Kevin Chau, Weixiu Dong, Hanqing Zhao
-__date__: 2019-03-05
-__description__: RNA-Seq alignment
+__date__: 2019-05-21
+__description__: RNA-Seq alignment.
+This snakefile contains the rules to align the reads to the reference genome by running STAR.
+It outputs two BAM files which contains the reads mapped to the reference genome and its transcriptome.
 """
 
 import os
@@ -18,12 +20,16 @@ subworkflow input_QC:
     snakefile: "../input_QC/Snakefile"  # Not required, but helpful
     configfile: "../../config.yaml"
 
-
+#Create the output folder if it doesn't exist
 if not os.path.exists("../../data/STAR_ALIGN"):
     os.makedirs("../../data/STAR_ALIGN")
 
 rule run_star:
     """
+    Using STAR to map the trimmed reads to the reference genome fasta file with
+    genome annotation file. Output two BAM files. ".sortedByCoord.out.bam:"
+    contains our reads aligned to the reference genome, and ".STARAligned.toTranscriptome.out.bam"
+    contians the reads align to the transcriptome.
     """
     input:
         index(os.path.join(config["DISK_DIR"], "Genome")),
@@ -55,6 +61,9 @@ rule run_star:
         " --outFileNamePrefix {params.prefix}")
 
 rule samtools_view:
+    """
+    Use samtools to output the sorted alignment to transcriptome BAM file.
+    """
     input:
         os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.toTranscriptome.out.bam")
     output:

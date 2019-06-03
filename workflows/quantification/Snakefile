@@ -1,7 +1,8 @@
 """
 __authors__: Kevin Chau, Hanqing Zhao
-__date__: 2019-03-05
-__description__: RNA-Seq quantification
+__date__: 2019-05-21
+__description__: This file contains the rules for RNA-Seq quantification using RSEM.
+RSEM is a tool for quantifying gene expression from RNA-seq.
 """
 
 import os
@@ -9,33 +10,45 @@ configfile: "../../config.yaml"
 # Sub-Workflows
 
 subworkflow align_QC:
-    workdir: "../align_QC"
-    snakefile: "../align_QC/Snakefile"  # Not required, but helpful
+    workdir: "../alignment"
+    snakefile: "../alignment/Snakefile"  # Not required, but helpful
     configfile: "../../config.yaml"
 
 if not os.path.exists(os.path.join(config["GENOME_DIR"], "RSEM_INDEX")):
     os.makedirs(os.path.join(config["GENOME_DIR"], "RSEM_INDEX"))
 
 rule pre_RSEM:
+    """
+    This rule creates the index files for running RSEM.
+    """
     input:
         os.path.join(config["GENOME_DIR"], config["GENOME_FASTA"]),
         os.path.join(config["GENOME_DIR"], config["GENOME_GTF"])
-    output:
+    params:
         os.path.join(config["GENOME_DIR"], "RSEM_INDEX/rsem_ref_prep")
+    output:
+        os.path.join(config["GENOME_DIR"], "RSEM_INDEX/rsem_ref_prep.n2g.idx.fa"),
+        os.path.join(config["GENOME_DIR"], "RSEM_INDEX/rsem_ref_prep.idx.fa")
     shell:
-        "rsem-prepare-reference --gtf {input[1]} {input[0]} {output[0]}"
+        "rsem-prepare-reference --gtf {input[1]} {input[0]} {params[0]}"
 
 if not os.path.exists("../../data/RSEM_Quant"):
     os.makedirs("../../data/RSEM_Quant")
 
 rule run_RSEM:
+    """
+     This rule takes in reads aligned to the transcriptome, which we obtained using STAR,
+     and outputs estimated expression levels of each gene.
+    """
     input:
-        os.path.join(config["GENOME_DIR"], "RSEM_INDEX/RSEM"),
+        os.path.join(config["GENOME_DIR"], "RSEM_INDEX/"),
+        os.path.join(config["GENOME_DIR"], "RSEM_INDEX/rsem_ref_prep.n2g.idx.fa"),
+        os.path.join(config["GENOME_DIR"], "RSEM_INDEX/rsem_ref_prep.idx.fa"),
         os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.toTranscriptome.out_sorted.bam")
     output:
         os.path.join("../../data/RSEM_Quant", config["FASTQS"]["prefix"] + ".RSEM_Quant.rsem"),
         "../../log/Log_out.rsem"
     shell:
-        "rsem-calculate-expression  -p 12 --paired-end --bam --estimate-rspd --calc-ci"
+        "rsem-calculate-expression -p 12 --paired-end --bam --estimate-rspd --calc-ci"
         " --no-bam-output --ci-memory 1000 --seed 12345 --forward-prob 0"
-        " {input[1]} {input[0]} {output[0]} >& {output[1]}"
+        " {input[3]} {input[0]} {output[0]} >& {output[1]}"

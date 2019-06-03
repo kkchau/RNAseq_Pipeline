@@ -1,6 +1,6 @@
 """
 __authors__: Kevin Chau, Hanqing Zhao
-__date__: 2019-03-05
+__date__: 2019-05-21
 __description__: Perform RNA-Seq quality control, alignment, and quantification
 """
 
@@ -23,14 +23,22 @@ if not os.path.exists("log"):
 #    workdir: "workflows/align_QC"
 #    snakefile: "workflows/align_QC/Snakefile"
 
-subworkflow alignment:
-    workdir: "workflows/alignment"
-    snakefile: "workflows/alignment/Snakefile"
+#subworkflow alignment:
+    #workdir: "workflows/alignment"
+    #snakefile: "workflows/alignment/Snakefile"
+
+subworkflow quantification:
+    workdir: "workflows/quantification"
+    snakefile: "workflows/quantification/Snakefile"
 
 rule all:
     input:
+        quantification(os.path.join("../../data/RSEM_Quant", config["FASTQS"]["prefix"] + ".RSEM_Quant.rsem")),
+        quantification("../../log/Log_out.rsem"),
+        quantification(os.path.join(config["GENOME_DIR"], "RSEM_INDEX/rsem_ref_prep.n2g.idx.fa")),
+        quantification(os.path.join(config["GENOME_DIR"], "RSEM_INDEX/rsem_ref_prep.idx.fa"))
         #alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.sortedByCoord.out.bam")),
-        alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.toTranscriptome.out_sorted.bam"))
+        #alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.toTranscriptome.out_sorted.bam"))
 #        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".multiple_metrics.txt"),
 #        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".marked_duplicates.bam"),
 #        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".marked_dup_metrics.txt"),
