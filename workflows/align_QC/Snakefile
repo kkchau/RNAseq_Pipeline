@@ -2,7 +2,7 @@
 __authors__: Kevin Chau, Hanqing Zhao
 __date__: 2019-04-17
 __description__: This file contains rules for RNA-Seq quality control of the
-BAM files after alignment, using picard, featureCounts, and samtools.
+BAM files after alignment, using picard tools, featureCounts, and samtools.
 """
 import os
 configfile: "../../config.yaml"
@@ -134,7 +134,7 @@ rule RNA_seQC:
 
 rule Mt_percentage:
     """
-    This rule calculates the percentage of ??
+    This rule calculates the percentage of the number of chromosomes that aligned to the reference genes.
     """
     input:
         alignment("../../data/STAR_ALIGN/"+config["FASTQS"]["prefix"]+".STARAligned.sortedByCoord.out.bam")
