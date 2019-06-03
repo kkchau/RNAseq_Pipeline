@@ -39,7 +39,7 @@ rule all:
         #quantification(os.path.join(config["GENOME_DIR"], "RSEM_INDEX/rsem_ref_prep.idx.fa"))
         #alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.sortedByCoord.out.bam")),
         #alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.toTranscriptome.out_sorted.bam"))
-#        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".multiple_metrics.txt"),
+        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".multiple_metrics.txt"),
 #        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".marked_duplicates.bam"),
 #        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".marked_dup_metrics.txt"),
 #        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".RNA_Metrics.txt"),
