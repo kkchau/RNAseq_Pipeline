@@ -1,7 +1,26 @@
 """
 __authors__: Kevin Chau, Hanqing Zhao
 __date__: 2019-03-05
-__description__: RNA-Seq input quality control
+__description__: RNA-Seq input quality control using fastQC. This file contains
+the rules to do some quality control checks on raw sequence data input.
+The manual page of fastQC can be seen by typing 'fastqc -h'.
 """
 import os
 configfile: "../../config.yaml"
+
+if not os.path.exists("../../data/input_QC"):
+    os.makedirs("../../data/input_QC")
+
+rule run_fastqc:
+    """
+    This rule takes the path of the raw sequence data file, and output the html
+    report files showing the quality of the input raw sequences.
+    """
+    input:
+        read1 = os.path.join("../../source", config["FASTQS"]["read1"] + ".fastq"),
+        read2 = os.path.join("../../source", config["FASTQS"]["read2"] + ".fastq")
+    output:
+        os.path.join("../../data/input_QC", config["FASTQS"]["read1"]+"_fastqc.html"),
+        os.path.join("../../data/input_QC", config["FASTQS"]["read2"]+"_fastqc.html")
+    shell:
+        "fastqc -o ../../data/input_QC {input[0]} {input[1]}"

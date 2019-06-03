@@ -35,8 +35,8 @@ rule all:
     input:
         quantification(os.path.join("../../data/RSEM_Quant", config["FASTQS"]["prefix"] + ".RSEM_Quant.rsem")),
         quantification("../../log/Log_out.rsem"),
-        quantification(os.path.join(config["GENOME_DIR"], "RSEM_INDEX/rsem_ref_prep.n2g.idx.fa")),
-        quantification(os.path.join(config["GENOME_DIR"], "RSEM_INDEX/rsem_ref_prep.idx.fa"))
+        #quantification(os.path.join(config["GENOME_DIR"], "RSEM_INDEX/rsem_ref_prep.n2g.idx.fa")),
+        #quantification(os.path.join(config["GENOME_DIR"], "RSEM_INDEX/rsem_ref_prep.idx.fa"))
         #alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.sortedByCoord.out.bam")),
         #alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.toTranscriptome.out_sorted.bam"))
 #        align_QC("../../data/QC/"+config["FASTQS"]["prefix"]+".multiple_metrics.txt"),

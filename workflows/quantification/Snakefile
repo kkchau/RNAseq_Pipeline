@@ -51,4 +51,4 @@ rule run_RSEM:
     shell:
         "rsem-calculate-expression -p 12 --paired-end --bam --estimate-rspd --calc-ci"
         " --no-bam-output --ci-memory 1000 --seed 12345 --forward-prob 0"
-        " {input[3]} {input[0]} {output[0]} >& {output[1]}"
+        " {input[3]} {input[0]}/rsem_ref_prep {output[0]} >& {output[1]}"

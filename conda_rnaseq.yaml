@@ -12,3 +12,4 @@ dependencies:
   - rsem
   - samtools=1.9
   - openssl=1.0
+  - fastqc
