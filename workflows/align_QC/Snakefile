@@ -18,7 +18,9 @@ if not os.path.exists("../../data/align_QC"):
 
 rule CollectMultipleMetrics:
     """
-    Make the multiple_metrics by picard tools.
+    This rule runs one or more of the metrics collection modules at the same time,
+    and produces outputs of '.pdf' and '.txt' files for each module,
+    except for the CollectAlignmentSummaryMetrics module.
     """
     input:
         alignment("../../data/STAR_ALIGN/"+config["FASTQS"]["prefix"]+".STARAligned.sortedByCoord.out.bam"),
