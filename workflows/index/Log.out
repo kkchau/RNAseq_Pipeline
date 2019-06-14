@@ -1,7 +1,8 @@
-STAR version=2.7.0f
-STAR compilation time,server,dir=Thu Mar 28 16:14:02 EDT 2019 vega:/home/dobin/data/STAR/STARcode/STAR.master/source
+STAR version=STAR_2.6.1d
+STAR compilation time,server,dir=Fri Nov 16 22:04:15 GMT 2018 :/Users/travis/build/alexdobin/travis-tests/STARcompile/source
 ##### DEFAULT parameters:
-versionGenome                     2.7.0d
+versionSTAR                       20201
+versionGenome                     20101   20200   
 parametersFiles                   -   
 sysShell                          -
 runMode                           alignReads
@@ -35,7 +36,6 @@ limitOutSJcollapsed               1000000
 limitOutSJoneRead                 1000
 limitBAMsortRAM                   0
 limitSjdbInsertNsj                1000000
-limitNreadsSoft                   18446744073709551615
 outFileNamePrefix                 ./
 outTmpDir                         -
 outTmpKeep                        None
@@ -163,50 +163,40 @@ quantTranscriptomeBAMcompression    1
 quantTranscriptomeBan             IndelSoftclipSingleend
 twopass1readsN                    18446744073709551615
 twopassMode                       None
-soloType                          None
-soloCBstart                       1
-soloUMIstart                      17
-soloCBlen                         16
-soloUMIlen                        10
-soloBarcodeReadLength             1
-soloCBwhitelist                   -
-soloStrand                        Forward
-soloOutFileNames                  Solo.out/   genes.tsv   barcodes.tsv   matrix.mtx   matrixSJ.mtx   
-soloFeatures                      Gene   
-soloUMIdedup                      1MM_All   
 ##### Command Line:
-STAR --runThreadN 16 --runMode genomeGenerate --genomeDir /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX --genomeFastaFiles /home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa --sjdbGTFfile /home/kkchau/projects/RNAseq_Pipeline/references/gencode.v30.annotation.gtf
+STAR --runThreadN 16 --runMode genomeGenerate --genomeDir /Users/zhq/RNAseq_Pipeline/references/STAR_INDEX --genomeFastaFiles /Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa --sjdbGTFfile /Users/zhq/RNAseq_Pipeline/references/gencode.v30.annotation.gtf
 ##### Initial USER parameters from Command Line:
 ###### All USER parameters from Command Line:
 runThreadN                    16     ~RE-DEFINED
 runMode                       genomeGenerate     ~RE-DEFINED
-genomeDir                     /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX     ~RE-DEFINED
-genomeFastaFiles              /home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa        ~RE-DEFINED
-sjdbGTFfile                   /home/kkchau/projects/RNAseq_Pipeline/references/gencode.v30.annotation.gtf     ~RE-DEFINED
+genomeDir                     /Users/zhq/RNAseq_Pipeline/references/STAR_INDEX     ~RE-DEFINED
+genomeFastaFiles              /Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa        ~RE-DEFINED
+sjdbGTFfile                   /Users/zhq/RNAseq_Pipeline/references/gencode.v30.annotation.gtf     ~RE-DEFINED
 ##### Finished reading parameters from all sources
 
 ##### Final user re-defined parameters-----------------:
 runMode                           genomeGenerate
 runThreadN                        16
-genomeDir                         /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX
-genomeFastaFiles                  /home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa   
-sjdbGTFfile                       /home/kkchau/projects/RNAseq_Pipeline/references/gencode.v30.annotation.gtf
+genomeDir                         /Users/zhq/RNAseq_Pipeline/references/STAR_INDEX
+genomeFastaFiles                  /Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa   
+sjdbGTFfile                       /Users/zhq/RNAseq_Pipeline/references/gencode.v30.annotation.gtf
 
 -------------------------------
 ##### Final effective command line:
-STAR   --runMode genomeGenerate   --runThreadN 16   --genomeDir /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX   --genomeFastaFiles /home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa      --sjdbGTFfile /home/kkchau/projects/RNAseq_Pipeline/references/gencode.v30.annotation.gtf
+STAR   --runMode genomeGenerate   --runThreadN 16   --genomeDir /Users/zhq/RNAseq_Pipeline/references/STAR_INDEX   --genomeFastaFiles /Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa      --sjdbGTFfile /Users/zhq/RNAseq_Pipeline/references/gencode.v30.annotation.gtf
 
 ##### Final parameters after user input--------------------------------:
-versionGenome                     2.7.0d
+versionSTAR                       20201
+versionGenome                     20101   20200   
 parametersFiles                   -   
 sysShell                          -
 runMode                           genomeGenerate
 runThreadN                        16
 runDirPerm                        User_RWX
 runRNGseed                        777
-genomeDir                         /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX
+genomeDir                         /Users/zhq/RNAseq_Pipeline/references/STAR_INDEX
 genomeLoad                        NoSharedMemory
-genomeFastaFiles                  /home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa   
+genomeFastaFiles                  /Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa   
 genomeChainFiles                  -   
 genomeSAindexNbases               14
 genomeChrBinNbits                 18
@@ -231,7 +221,6 @@ limitOutSJcollapsed               1000000
 limitOutSJoneRead                 1000
 limitBAMsortRAM                   0
 limitSjdbInsertNsj                1000000
-limitNreadsSoft                   18446744073709551615
 outFileNamePrefix                 ./
 outTmpDir                         -
 outTmpKeep                        None
@@ -344,7 +333,7 @@ chimMultimapScoreRange            1
 chimNonchimScoreDropMin           20
 chimOutJunctionFormat             0   
 sjdbFileChrStartEnd               -   
-sjdbGTFfile                       /home/kkchau/projects/RNAseq_Pipeline/references/gencode.v30.annotation.gtf
+sjdbGTFfile                       /Users/zhq/RNAseq_Pipeline/references/gencode.v30.annotation.gtf
 sjdbGTFchrPrefix                  -
 sjdbGTFfeatureExon                exon
 sjdbGTFtagExonParentTranscript    transcript_id
@@ -359,713 +348,26 @@ quantTranscriptomeBAMcompression    1
 quantTranscriptomeBan             IndelSoftclipSingleend
 twopass1readsN                    18446744073709551615
 twopassMode                       None
-soloType                          None
-soloCBstart                       1
-soloUMIstart                      17
-soloCBlen                         16
-soloUMIlen                        10
-soloBarcodeReadLength             1
-soloCBwhitelist                   -
-soloStrand                        Forward
-soloOutFileNames                  Solo.out/   genes.tsv   barcodes.tsv   matrix.mtx   matrixSJ.mtx   
-soloFeatures                      Gene   
-soloUMIdedup                      1MM_All   
 ----------------------------------------
 
 Finished loading and checking parameters
-May 12 17:04:21 ... starting to generate Genome files
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 0  "chr1" chrStart: 0
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 1  "chr2" chrStart: 249036800
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 2  "chr3" chrStart: 491257856
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 3  "chr4" chrStart: 689700864
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 4  "chr5" chrStart: 880017408
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 5  "chr6" chrStart: 1061683200
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 6  "chr7" chrStart: 1232601088
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 7  "chr8" chrStart: 1391984640
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 8  "chr9" chrStart: 1537212416
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 9  "chr10" chrStart: 1675624448
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 10  "chr11" chrStart: 1809580032
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 11  "chr12" chrStart: 1944846336
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 12  "chr13" chrStart: 2078277632
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 13  "chr14" chrStart: 2192834560
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 14  "chr15" chrStart: 2300051456
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 15  "chr16" chrStart: 2402287616
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 16  "chr17" chrStart: 2492727296
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 17  "chr18" chrStart: 2576089088
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 18  "chr19" chrStart: 2656567296
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 19  "chr20" chrStart: 2715287552
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 20  "chr21" chrStart: 2779774976
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 21  "chr22" chrStart: 2826698752
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 22  "chrX" chrStart: 2877554688
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 23  "chrY" chrStart: 3033792512
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 24  "chrM" chrStart: 3091202048
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 25  "GL000008.2" chrStart: 3091464192
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 26  "GL000009.2" chrStart: 3091726336
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 27  "GL000194.1" chrStart: 3091988480
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 28  "GL000195.1" chrStart: 3092250624
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 29  "GL000205.2" chrStart: 3092512768
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 30  "GL000208.1" chrStart: 3092774912
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 31  "GL000213.1" chrStart: 3093037056
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 32  "GL000214.1" chrStart: 3093299200
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 33  "GL000216.2" chrStart: 3093561344
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 34  "GL000218.1" chrStart: 3093823488
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 35  "GL000219.1" chrStart: 3094085632
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 36  "GL000220.1" chrStart: 3094347776
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 37  "GL000221.1" chrStart: 3094609920
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 38  "GL000224.1" chrStart: 3094872064
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 39  "GL000225.1" chrStart: 3095134208
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 40  "GL000226.1" chrStart: 3095396352
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 41  "KQ759759.1" chrStart: 3095658496
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 42  "KN538364.1" chrStart: 3095920640
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 43  "KQ759762.1" chrStart: 3096444928
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 44  "KQ031383.1" chrStart: 3096707072
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 45  "KN538369.1" chrStart: 3097231360
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 46  "JH159136.1" chrStart: 3098017792
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 47  "JH159137.1" chrStart: 3098279936
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 48  "KZ208923.1" chrStart: 3098542080
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 49  "KZ208924.1" chrStart: 3098804224
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 50  "KQ031387.1" chrStart: 3099066368
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 51  "KV766195.1" chrStart: 3099590656
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 52  "KZ208916.1" chrStart: 3099852800
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 53  "KN538360.1" chrStart: 3100901376
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 54  "KZ208920.1" chrStart: 3101425664
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 55  "KZ208906.1" chrStart: 3102212096
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 56  "KN196484.1" chrStart: 3102736384
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 57  "KN196476.1" chrStart: 3103260672
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 58  "KQ983257.1" chrStart: 3103784960
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 59  "KN196479.1" chrStart: 3104047104
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 60  "KV575245.1" chrStart: 3104571392
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 61  "KZ208917.1" chrStart: 3104833536
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 62  "KZ208911.1" chrStart: 3105095680
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 63  "KN196473.1" chrStart: 3105357824
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 64  "KZ559108.1" chrStart: 3105619968
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 65  "KN196487.1" chrStart: 3106144256
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 66  "KQ759760.1" chrStart: 3106406400
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 67  "KN196475.1" chrStart: 3106930688
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 68  "KV880766.1" chrStart: 3107454976
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 69  "KV880767.1" chrStart: 3107717120
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 70  "KQ090016.1" chrStart: 3108241408
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 71  "KV880764.1" chrStart: 3108503552
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 72  "KN538361.1" chrStart: 3108765696
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 73  "KN196474.1" chrStart: 3109289984
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 74  "KZ559109.1" chrStart: 3109552128
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 75  "KQ090022.1" chrStart: 3110076416
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 76  "KN196478.1" chrStart: 3110338560
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 77  "KZ559104.1" chrStart: 3110862848
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 78  "KN196480.1" chrStart: 3111124992
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 79  "KQ090028.1" chrStart: 3111649280
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 80  "KN196483.1" chrStart: 3112173568
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 81  "KN196481.1" chrStart: 3112435712
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 82  "KN538363.1" chrStart: 3112697856
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 83  "KN538362.1" chrStart: 3113222144
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 84  "KQ031385.1" chrStart: 3113484288
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 85  "KV766192.1" chrStart: 3114008576
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 86  "KQ031386.1" chrStart: 3114532864
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 87  "KQ031388.1" chrStart: 3114795008
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 88  "KN538365.1" chrStart: 3115057152
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 89  "KN538366.1" chrStart: 3115319296
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 90  "KN538367.1" chrStart: 3115581440
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 91  "KN538370.1" chrStart: 3116105728
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 92  "KN538373.1" chrStart: 3116367872
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 93  "KZ559113.1" chrStart: 3116630016
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 94  "KV880765.1" chrStart: 3117154304
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 95  "KV766196.1" chrStart: 3117678592
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 96  "KN538371.1" chrStart: 3118202880
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 97  "KQ031384.1" chrStart: 3118465024
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 98  "KN538372.1" chrStart: 3118989312
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 99  "KQ090021.1" chrStart: 3119513600
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 100  "KN196482.1" chrStart: 3120037888
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 101  "KZ559115.1" chrStart: 3120300032
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 102  "KZ208914.1" chrStart: 3120562176
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 103  "KZ208922.1" chrStart: 3120824320
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 104  "KQ458386.1" chrStart: 3121086464
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 105  "KV575244.1" chrStart: 3121610752
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 106  "KZ559100.1" chrStart: 3122397184
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 107  "KZ208912.1" chrStart: 3122659328
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 108  "KZ208915.1" chrStart: 3123445760
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 109  "KV880768.1" chrStart: 3129999360
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 110  "KN196472.1" chrStart: 3132096512
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 111  "GL383545.1" chrStart: 3132358656
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 112  "GL383546.1" chrStart: 3132620800
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 113  "KI270824.1" chrStart: 3133145088
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 114  "KI270825.1" chrStart: 3133407232
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 115  "KQ090020.1" chrStart: 3133669376
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 116  "GL383547.1" chrStart: 3133931520
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 117  "KN538368.1" chrStart: 3134193664
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 118  "KI270826.1" chrStart: 3134455808
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 119  "KI270827.1" chrStart: 3134717952
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 120  "KZ559111.1" chrStart: 3134980096
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 121  "KI270829.1" chrStart: 3135242240
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 122  "KI270830.1" chrStart: 3135504384
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 123  "KI270831.1" chrStart: 3135766528
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 124  "KI270832.1" chrStart: 3136290816
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 125  "KI270902.1" chrStart: 3136552960
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 126  "KI270903.1" chrStart: 3136815104
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 127  "KZ559110.1" chrStart: 3137077248
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 128  "KI270927.1" chrStart: 3137601536
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 129  "GL877875.1" chrStart: 3137863680
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 130  "GL383549.1" chrStart: 3138125824
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 131  "GL383550.2" chrStart: 3138387968
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 132  "KQ090023.1" chrStart: 3138650112
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 133  "GL877876.1" chrStart: 3138912256
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 134  "GL383552.1" chrStart: 3139436544
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 135  "KI270904.1" chrStart: 3139698688
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 136  "GL383553.2" chrStart: 3140485120
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 137  "KI270835.1" chrStart: 3140747264
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 138  "GL383551.1" chrStart: 3141009408
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 139  "KI270837.1" chrStart: 3141271552
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 140  "KI270833.1" chrStart: 3141533696
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 141  "KI270834.1" chrStart: 3141795840
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 142  "KI270836.1" chrStart: 3142057984
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 143  "KZ208918.1" chrStart: 3142320128
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 144  "KZ559112.1" chrStart: 3142582272
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 145  "KI270838.1" chrStart: 3142844416
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 146  "KI270839.1" chrStart: 3143368704
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 147  "KI270840.1" chrStart: 3143630848
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 148  "KI270841.1" chrStart: 3143892992
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 149  "KI270842.1" chrStart: 3144155136
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 150  "KI270843.1" chrStart: 3144417280
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 151  "KQ090024.1" chrStart: 3144679424
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 152  "KQ090025.1" chrStart: 3144941568
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 153  "KI270844.1" chrStart: 3145203712
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 154  "KI270845.1" chrStart: 3145728000
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 155  "KI270846.1" chrStart: 3145990144
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 156  "KI270847.1" chrStart: 3147563008
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 157  "KZ208919.1" chrStart: 3149135872
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 158  "KI270852.1" chrStart: 3149398016
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 159  "KI270848.1" chrStart: 3149922304
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 160  "GL383554.1" chrStart: 3150446592
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 161  "KI270906.1" chrStart: 3150970880
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 162  "GL383555.2" chrStart: 3151233024
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 163  "KI270851.1" chrStart: 3151757312
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 164  "KI270849.1" chrStart: 3152281600
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 165  "KI270905.1" chrStart: 3152543744
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 166  "KI270850.1" chrStart: 3157786624
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 167  "KQ031389.1" chrStart: 3158310912
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 168  "KI270853.1" chrStart: 3160932352
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 169  "GL383556.1" chrStart: 3163815936
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 170  "GL383557.1" chrStart: 3164078080
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 171  "KI270855.1" chrStart: 3164340224
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 172  "KQ031390.1" chrStart: 3164602368
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 173  "KI270856.1" chrStart: 3164864512
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 174  "KQ090027.1" chrStart: 3165126656
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 175  "KQ090026.1" chrStart: 3165650944
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 176  "KZ208921.1" chrStart: 3165913088
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 177  "KI270854.1" chrStart: 3166175232
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 178  "KI270909.1" chrStart: 3166437376
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 179  "KV766197.1" chrStart: 3166961664
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 180  "KZ559114.1" chrStart: 3167223808
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 181  "GL383563.3" chrStart: 3167485952
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 182  "KI270861.1" chrStart: 3168010240
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 183  "GL383564.2" chrStart: 3168272384
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 184  "GL000258.2" chrStart: 3168534528
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 185  "KI270860.1" chrStart: 3170369536
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 186  "KI270907.1" chrStart: 3170631680
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 187  "KI270862.1" chrStart: 3170893824
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 188  "GL383565.1" chrStart: 3171418112
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 189  "KI270908.1" chrStart: 3171680256
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 190  "KV766198.1" chrStart: 3173253120
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 191  "KI270910.1" chrStart: 3173777408
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 192  "GL383566.1" chrStart: 3174039552
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 193  "JH159146.1" chrStart: 3174301696
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 194  "JH159147.1" chrStart: 3174825984
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 195  "JH159148.1" chrStart: 3175088128
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 196  "KI270857.1" chrStart: 3175350272
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 197  "KI270858.1" chrStart: 3178233856
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 198  "KI270859.1" chrStart: 3178496000
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 199  "KZ559116.1" chrStart: 3178758144
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 200  "GL383567.1" chrStart: 3179020288
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 201  "GL383568.1" chrStart: 3179544576
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 202  "GL383569.1" chrStart: 3179806720
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 203  "GL383570.1" chrStart: 3180068864
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 204  "GL383571.1" chrStart: 3180331008
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 205  "GL383572.1" chrStart: 3180593152
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 206  "KI270863.1" chrStart: 3180855296
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 207  "KI270864.1" chrStart: 3181117440
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 208  "KQ458385.1" chrStart: 3181379584
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 209  "KI270912.1" chrStart: 3181641728
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 210  "KI270911.1" chrStart: 3181903872
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 211  "KV575254.1" chrStart: 3182166016
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 212  "KV575246.1" chrStart: 3182428160
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 213  "KV575256.1" chrStart: 3182690304
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 214  "KV575253.1" chrStart: 3182952448
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 215  "KV575252.1" chrStart: 3183214592
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 216  "KV575255.1" chrStart: 3183476736
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 217  "KV575259.1" chrStart: 3183738880
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 218  "KI270917.1" chrStart: 3184001024
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 219  "KI270918.1" chrStart: 3184263168
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 220  "KI270919.1" chrStart: 3184525312
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 221  "KV575247.1" chrStart: 3184787456
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 222  "KV575248.1" chrStart: 3185049600
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 223  "KV575250.1" chrStart: 3185311744
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 224  "KV575249.1" chrStart: 3185573888
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 225  "KV575257.1" chrStart: 3186098176
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 226  "KI270920.1" chrStart: 3186360320
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 227  "KI270921.1" chrStart: 3186622464
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 228  "KI270922.1" chrStart: 3187146752
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 229  "KI270923.1" chrStart: 3187408896
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 230  "KI270929.1" chrStart: 3187671040
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 231  "KI270930.1" chrStart: 3187933184
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 232  "KI270931.1" chrStart: 3188195328
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 233  "KI270932.1" chrStart: 3188457472
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 234  "KI270933.1" chrStart: 3188719616
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 235  "KI270882.1" chrStart: 3188981760
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 236  "KI270883.1" chrStart: 3189243904
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 237  "KI270884.1" chrStart: 3189506048
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 238  "KI270885.1" chrStart: 3189768192
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 239  "KI270886.1" chrStart: 3190030336
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 240  "KI270887.1" chrStart: 3190292480
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 241  "KI270888.1" chrStart: 3190554624
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 242  "KV575258.1" chrStart: 3190816768
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 243  "KV575251.1" chrStart: 3191078912
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 244  "KV575260.1" chrStart: 3191341056
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 245  "KI270889.1" chrStart: 3191603200
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 246  "KI270890.1" chrStart: 3191865344
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 247  "GL000209.2" chrStart: 3192127488
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 248  "KI270891.1" chrStart: 3192389632
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 249  "KI270914.1" chrStart: 3192651776
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 250  "KI270915.1" chrStart: 3192913920
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 251  "KI270916.1" chrStart: 3193176064
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 252  "GL949746.1" chrStart: 3193438208
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 253  "GL949747.2" chrStart: 3194486784
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 254  "GL949748.2" chrStart: 3195273216
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 255  "GL949749.2" chrStart: 3196583936
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 256  "GL949750.2" chrStart: 3197894656
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 257  "GL949751.2" chrStart: 3199205376
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 258  "GL949752.1" chrStart: 3200253952
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 259  "GL949753.2" chrStart: 3201302528
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 260  "GL383573.1" chrStart: 3202351104
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 261  "GL383574.1" chrStart: 3202875392
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 262  "GL383575.2" chrStart: 3203137536
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 263  "KI270866.1" chrStart: 3203399680
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 264  "GL383576.1" chrStart: 3203661824
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 265  "KI270867.1" chrStart: 3203923968
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 266  "KI270865.1" chrStart: 3204186112
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 267  "KI270938.1" chrStart: 3204448256
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 268  "KI270868.1" chrStart: 3205758976
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 269  "KI270760.1" chrStart: 3206021120
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 270  "KI270762.1" chrStart: 3206283264
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 271  "GL383518.1" chrStart: 3206807552
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 272  "KI270759.1" chrStart: 3207069696
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 273  "KI270766.1" chrStart: 3207593984
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 274  "GL383519.1" chrStart: 3207856128
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 275  "KI270761.1" chrStart: 3208118272
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 276  "KQ458382.1" chrStart: 3208380416
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 277  "GL383520.2" chrStart: 3208642560
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 278  "KI270763.1" chrStart: 3209166848
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 279  "KQ458383.1" chrStart: 3210215424
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 280  "KI270765.1" chrStart: 3210739712
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 281  "KI270764.1" chrStart: 3211001856
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 282  "KQ983255.1" chrStart: 3211264000
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 283  "KQ458384.1" chrStart: 3211788288
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 284  "KV880763.1" chrStart: 3212050432
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 285  "KZ208904.1" chrStart: 3212836864
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 286  "KZ208905.1" chrStart: 3213099008
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 287  "KI270892.1" chrStart: 3213361152
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 288  "GL383577.2" chrStart: 3213623296
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 289  "KI270869.1" chrStart: 3213885440
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 290  "KI270870.1" chrStart: 3214147584
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 291  "KI270871.1" chrStart: 3214409728
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 292  "GL383578.2" chrStart: 3214671872
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 293  "GL383579.2" chrStart: 3214934016
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 294  "GL383580.2" chrStart: 3215196160
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 295  "GL383581.2" chrStart: 3215458304
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 296  "KI270872.1" chrStart: 3215720448
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 297  "KI270873.1" chrStart: 3215982592
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 298  "KI270874.1" chrStart: 3216244736
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 299  "GL383582.2" chrStart: 3216506880
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 300  "GL383583.2" chrStart: 3216769024
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 301  "KI270875.1" chrStart: 3217031168
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 302  "KI270876.1" chrStart: 3217293312
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 303  "KI270877.1" chrStart: 3217817600
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 304  "KI270878.1" chrStart: 3218079744
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 305  "KI270879.1" chrStart: 3218341888
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 306  "KB663609.1" chrStart: 3218866176
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 307  "KI270928.1" chrStart: 3219128320
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 308  "KN196485.1" chrStart: 3219390464
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 309  "KN196486.1" chrStart: 3219652608
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 310  "KQ458387.1" chrStart: 3219914752
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 311  "KQ458388.1" chrStart: 3220176896
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 312  "KQ759761.1" chrStart: 3220439040
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 313  "KI270769.1" chrStart: 3220701184
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 314  "KI270767.1" chrStart: 3220963328
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 315  "GL383521.1" chrStart: 3221225472
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 316  "KI270772.1" chrStart: 3221487616
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 317  "GL383522.1" chrStart: 3221749760
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 318  "KI270770.1" chrStart: 3222011904
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 319  "KI270893.1" chrStart: 3222274048
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 320  "KI270894.1" chrStart: 3222536192
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 321  "GL582966.2" chrStart: 3222798336
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 322  "KI270773.1" chrStart: 3223060480
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 323  "KI270776.1" chrStart: 3223322624
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 324  "KI270768.1" chrStart: 3223584768
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 325  "KI270774.1" chrStart: 3223846912
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 326  "KI270771.1" chrStart: 3224109056
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 327  "KI270775.1" chrStart: 3224371200
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 328  "KQ983256.1" chrStart: 3224633344
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 329  "KZ208907.1" chrStart: 3225419776
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 330  "KZ208908.1" chrStart: 3225681920
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 331  "JH636055.2" chrStart: 3225944064
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 332  "GL383526.1" chrStart: 3226206208
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 333  "KI270779.1" chrStart: 3226468352
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 334  "KI270777.1" chrStart: 3226730496
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 335  "KI270782.1" chrStart: 3226992640
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 336  "KI270783.1" chrStart: 3227254784
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 337  "KI270778.1" chrStart: 3227516928
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 338  "KI270895.1" chrStart: 3227779072
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 339  "KZ208909.1" chrStart: 3228041216
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 340  "KI270780.1" chrStart: 3228303360
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 341  "KI270924.1" chrStart: 3228565504
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 342  "KI270781.1" chrStart: 3228827648
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 343  "KI270934.1" chrStart: 3229089792
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 344  "KZ559105.1" chrStart: 3229351936
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 345  "KI270935.1" chrStart: 3229614080
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 346  "KZ559101.1" chrStart: 3229876224
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 347  "KI270936.1" chrStart: 3230138368
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 348  "KZ559102.1" chrStart: 3230400512
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 349  "KI270937.1" chrStart: 3230662656
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 350  "KZ559103.1" chrStart: 3230924800
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 351  "KI270784.1" chrStart: 3231449088
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 352  "KQ983258.1" chrStart: 3231711232
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 353  "KV766193.1" chrStart: 3231973376
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 354  "GL383527.1" chrStart: 3232497664
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 355  "KI270790.1" chrStart: 3232759808
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 356  "GL383528.1" chrStart: 3233021952
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 357  "KI270787.1" chrStart: 3233546240
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 358  "GL000257.2" chrStart: 3233808384
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 359  "KI270785.1" chrStart: 3234594816
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 360  "KQ090013.1" chrStart: 3234856960
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 361  "KI270786.1" chrStart: 3235119104
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 362  "KI270788.1" chrStart: 3235381248
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 363  "KI270789.1" chrStart: 3235643392
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 364  "KI270896.1" chrStart: 3235905536
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 365  "KI270925.1" chrStart: 3236429824
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 366  "KQ090014.1" chrStart: 3237216256
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 367  "KQ090015.1" chrStart: 3237478400
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 368  "GL383532.1" chrStart: 3237740544
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 369  "KI270897.1" chrStart: 3238002688
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 370  "GL383531.1" chrStart: 3239313408
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 371  "GL949742.1" chrStart: 3239575552
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 372  "GL339449.2" chrStart: 3239837696
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 373  "KI270795.1" chrStart: 3241672704
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 374  "KI270791.1" chrStart: 3241934848
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 375  "GL383530.1" chrStart: 3242196992
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 376  "KI270898.1" chrStart: 3242459136
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 377  "KI270792.1" chrStart: 3242721280
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 378  "KI270796.1" chrStart: 3242983424
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 379  "KI270793.1" chrStart: 3243245568
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 380  "KI270794.1" chrStart: 3243507712
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 381  "KN196477.1" chrStart: 3243769856
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 382  "KV575243.1" chrStart: 3244032000
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 383  "KZ208910.1" chrStart: 3244556288
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 384  "KQ090017.1" chrStart: 3244818432
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 385  "GL383533.1" chrStart: 3245080576
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 386  "KB021644.2" chrStart: 3245342720
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 387  "KI270797.1" chrStart: 3245604864
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 388  "KI270798.1" chrStart: 3245867008
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 389  "KI270799.1" chrStart: 3246391296
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 390  "KI270800.1" chrStart: 3246653440
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 391  "KI270801.1" chrStart: 3246915584
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 392  "KI270802.1" chrStart: 3247964160
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 393  "KI270758.1" chrStart: 3248226304
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 394  "GL000250.2" chrStart: 3248488448
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 395  "GL000251.2" chrStart: 3253207040
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 396  "GL000252.2" chrStart: 3258187776
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 397  "GL000253.2" chrStart: 3262906368
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 398  "GL000254.2" chrStart: 3267624960
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 399  "GL000255.2" chrStart: 3272605696
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 400  "GL000256.2" chrStart: 3277324288
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 401  "KI270804.1" chrStart: 3282305024
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 402  "KI270806.1" chrStart: 3282567168
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 403  "GL383534.2" chrStart: 3282829312
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 404  "KI270805.1" chrStart: 3283091456
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 405  "KI270899.1" chrStart: 3283353600
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 406  "KI270809.1" chrStart: 3283615744
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 407  "KI270803.1" chrStart: 3283877888
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 408  "KI270807.1" chrStart: 3285188608
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 409  "KZ559106.1" chrStart: 3285450752
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 410  "KZ208913.1" chrStart: 3285712896
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 411  "KI270808.1" chrStart: 3286499328
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 412  "KI270811.1" chrStart: 3287023616
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 413  "KI270814.1" chrStart: 3287547904
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 414  "KI270810.1" chrStart: 3287810048
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 415  "KI270812.1" chrStart: 3288334336
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 416  "KI270815.1" chrStart: 3288858624
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 417  "KI270813.1" chrStart: 3289120768
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 418  "KI270816.1" chrStart: 3289645056
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 419  "KI270818.1" chrStart: 3290169344
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 420  "KI270817.1" chrStart: 3290431488
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 421  "KI270900.1" chrStart: 3290693632
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 422  "KI270819.1" chrStart: 3291217920
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 423  "KI270901.1" chrStart: 3291480064
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 424  "KI270820.1" chrStart: 3291742208
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 425  "KI270926.1" chrStart: 3292004352
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 426  "KZ559107.1" chrStart: 3292266496
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 427  "KI270821.1" chrStart: 3292528640
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 428  "KI270822.1" chrStart: 3293577216
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 429  "GL383539.1" chrStart: 3294363648
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 430  "GL383540.1" chrStart: 3294625792
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 431  "GL383541.1" chrStart: 3294887936
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 432  "GL383542.1" chrStart: 3295150080
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 433  "KI270823.1" chrStart: 3295412224
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 434  "KQ090018.1" chrStart: 3295936512
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 435  "KQ090019.1" chrStart: 3296198656
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 436  "KI270880.1" chrStart: 3296460800
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 437  "KI270881.1" chrStart: 3296985088
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 438  "KI270913.1" chrStart: 3297247232
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 439  "KV766199.1" chrStart: 3297771520
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 440  "KI270302.1" chrStart: 3298033664
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 441  "KI270303.1" chrStart: 3298295808
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 442  "KI270304.1" chrStart: 3298557952
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 443  "KI270305.1" chrStart: 3298820096
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 444  "KI270310.1" chrStart: 3299082240
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 445  "KI270311.1" chrStart: 3299344384
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 446  "KI270312.1" chrStart: 3299606528
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 447  "KI270315.1" chrStart: 3299868672
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 448  "KI270316.1" chrStart: 3300130816
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 449  "KI270317.1" chrStart: 3300392960
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 450  "KI270320.1" chrStart: 3300655104
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 451  "KI270322.1" chrStart: 3300917248
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 452  "KI270329.1" chrStart: 3301179392
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 453  "KI270330.1" chrStart: 3301441536
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 454  "KI270333.1" chrStart: 3301703680
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 455  "KI270334.1" chrStart: 3301965824
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 456  "KI270335.1" chrStart: 3302227968
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 457  "KI270336.1" chrStart: 3302490112
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 458  "KI270337.1" chrStart: 3302752256
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 459  "KI270338.1" chrStart: 3303014400
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 460  "KI270340.1" chrStart: 3303276544
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 461  "KI270362.1" chrStart: 3303538688
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 462  "KI270363.1" chrStart: 3303800832
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 463  "KI270364.1" chrStart: 3304062976
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 464  "KI270366.1" chrStart: 3304325120
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 465  "KI270371.1" chrStart: 3304587264
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 466  "KI270372.1" chrStart: 3304849408
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 467  "KI270373.1" chrStart: 3305111552
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 468  "KI270374.1" chrStart: 3305373696
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 469  "KI270375.1" chrStart: 3305635840
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 470  "KI270376.1" chrStart: 3305897984
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 471  "KI270378.1" chrStart: 3306160128
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 472  "KI270379.1" chrStart: 3306422272
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 473  "KI270381.1" chrStart: 3306684416
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 474  "KI270382.1" chrStart: 3306946560
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 475  "KI270383.1" chrStart: 3307208704
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 476  "KI270384.1" chrStart: 3307470848
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 477  "KI270385.1" chrStart: 3307732992
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 478  "KI270386.1" chrStart: 3307995136
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 479  "KI270387.1" chrStart: 3308257280
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 480  "KI270388.1" chrStart: 3308519424
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 481  "KI270389.1" chrStart: 3308781568
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 482  "KI270390.1" chrStart: 3309043712
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 483  "KI270391.1" chrStart: 3309305856
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 484  "KI270392.1" chrStart: 3309568000
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 485  "KI270393.1" chrStart: 3309830144
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 486  "KI270394.1" chrStart: 3310092288
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 487  "KI270395.1" chrStart: 3310354432
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 488  "KI270396.1" chrStart: 3310616576
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 489  "KI270411.1" chrStart: 3310878720
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 490  "KI270412.1" chrStart: 3311140864
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 491  "KI270414.1" chrStart: 3311403008
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 492  "KI270417.1" chrStart: 3311665152
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 493  "KI270418.1" chrStart: 3311927296
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 494  "KI270419.1" chrStart: 3312189440
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 495  "KI270420.1" chrStart: 3312451584
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 496  "KI270422.1" chrStart: 3312713728
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 497  "KI270423.1" chrStart: 3312975872
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 498  "KI270424.1" chrStart: 3313238016
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 499  "KI270425.1" chrStart: 3313500160
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 500  "KI270429.1" chrStart: 3313762304
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 501  "KI270435.1" chrStart: 3314024448
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 502  "KI270438.1" chrStart: 3314286592
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 503  "KI270442.1" chrStart: 3314548736
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 504  "KI270448.1" chrStart: 3315073024
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 505  "KI270465.1" chrStart: 3315335168
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 506  "KI270466.1" chrStart: 3315597312
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 507  "KI270467.1" chrStart: 3315859456
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 508  "KI270468.1" chrStart: 3316121600
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 509  "KI270507.1" chrStart: 3316383744
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 510  "KI270508.1" chrStart: 3316645888
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 511  "KI270509.1" chrStart: 3316908032
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 512  "KI270510.1" chrStart: 3317170176
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 513  "KI270511.1" chrStart: 3317432320
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 514  "KI270512.1" chrStart: 3317694464
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 515  "KI270515.1" chrStart: 3317956608
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 516  "KI270516.1" chrStart: 3318218752
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 517  "KI270517.1" chrStart: 3318480896
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 518  "KI270518.1" chrStart: 3318743040
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 519  "KI270519.1" chrStart: 3319005184
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 520  "KI270521.1" chrStart: 3319267328
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 521  "KI270522.1" chrStart: 3319529472
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 522  "KI270528.1" chrStart: 3319791616
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 523  "KI270529.1" chrStart: 3320053760
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 524  "KI270530.1" chrStart: 3320315904
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 525  "KI270538.1" chrStart: 3320578048
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 526  "KI270539.1" chrStart: 3320840192
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 527  "KI270544.1" chrStart: 3321102336
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 528  "KI270548.1" chrStart: 3321364480
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 529  "KI270579.1" chrStart: 3321626624
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 530  "KI270580.1" chrStart: 3321888768
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 531  "KI270581.1" chrStart: 3322150912
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 532  "KI270582.1" chrStart: 3322413056
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 533  "KI270583.1" chrStart: 3322675200
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 534  "KI270584.1" chrStart: 3322937344
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 535  "KI270587.1" chrStart: 3323199488
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 536  "KI270588.1" chrStart: 3323461632
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 537  "KI270589.1" chrStart: 3323723776
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 538  "KI270590.1" chrStart: 3323985920
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 539  "KI270591.1" chrStart: 3324248064
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 540  "KI270593.1" chrStart: 3324510208
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 541  "KI270706.1" chrStart: 3324772352
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 542  "KI270707.1" chrStart: 3325034496
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 543  "KI270708.1" chrStart: 3325296640
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 544  "KI270709.1" chrStart: 3325558784
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 545  "KI270710.1" chrStart: 3325820928
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 546  "KI270711.1" chrStart: 3326083072
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 547  "KI270712.1" chrStart: 3326345216
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 548  "KI270713.1" chrStart: 3326607360
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 549  "KI270714.1" chrStart: 3326869504
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 550  "KI270715.1" chrStart: 3327131648
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 551  "KI270716.1" chrStart: 3327393792
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 552  "KI270717.1" chrStart: 3327655936
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 553  "KI270718.1" chrStart: 3327918080
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 554  "KI270719.1" chrStart: 3328180224
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 555  "KI270720.1" chrStart: 3328442368
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 556  "KI270721.1" chrStart: 3328704512
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 557  "KI270722.1" chrStart: 3328966656
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 558  "KI270723.1" chrStart: 3329228800
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 559  "KI270724.1" chrStart: 3329490944
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 560  "KI270725.1" chrStart: 3329753088
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 561  "KI270726.1" chrStart: 3330015232
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 562  "KI270727.1" chrStart: 3330277376
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 563  "KI270728.1" chrStart: 3330801664
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 564  "KI270729.1" chrStart: 3332898816
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 565  "KI270730.1" chrStart: 3333423104
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 566  "KI270731.1" chrStart: 3333685248
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 567  "KI270732.1" chrStart: 3333947392
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 568  "KI270733.1" chrStart: 3334209536
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 569  "KI270734.1" chrStart: 3334471680
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 570  "KI270735.1" chrStart: 3334733824
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 571  "KI270736.1" chrStart: 3334995968
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 572  "KI270737.1" chrStart: 3335258112
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 573  "KI270738.1" chrStart: 3335520256
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 574  "KI270739.1" chrStart: 3335782400
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 575  "KI270740.1" chrStart: 3336044544
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 576  "KI270741.1" chrStart: 3336306688
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 577  "KI270742.1" chrStart: 3336568832
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 578  "KI270743.1" chrStart: 3336830976
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 579  "KI270744.1" chrStart: 3337093120
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 580  "KI270745.1" chrStart: 3337355264
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 581  "KI270746.1" chrStart: 3337617408
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 582  "KI270747.1" chrStart: 3337879552
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 583  "KI270748.1" chrStart: 3338141696
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 584  "KI270749.1" chrStart: 3338403840
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 585  "KI270750.1" chrStart: 3338665984
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 586  "KI270751.1" chrStart: 3338928128
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 587  "KI270752.1" chrStart: 3339190272
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 588  "KI270753.1" chrStart: 3339452416
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 589  "KI270754.1" chrStart: 3339714560
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 590  "KI270755.1" chrStart: 3339976704
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 591  "KI270756.1" chrStart: 3340238848
-/home/kkchau/projects/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 592  "KI270757.1" chrStart: 3340500992
-Estimated genome size=3541763136   3340763136   201000000
-GstrandBit=32
-Number of SA indices: 6181754380
-May 12 17:05:45 ... starting to sort Suffix Array. This may take a long time...
-Number of chunks: 63;   chunks size limit: 911942008 bytes
-May 12 17:06:05 ... sorting Suffix Array chunks and saving them to disk...
-Writing 757520592 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_0 ; empty space on disk = 533250094661632 bytes ... done
-Writing 643981256 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_1 ; empty space on disk = 533204682801152 bytes ... done
-Writing 793103984 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_2 ; empty space on disk = 533183523323904 bytes ... done
-Writing 761260592 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_3 ; empty space on disk = 533124818665472 bytes ... done
-Writing 653329240 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_4 ; empty space on disk = 533093097930752 bytes ... done
-Writing 856425832 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_5 ; empty space on disk = 533063830732800 bytes ... done
-Writing 838144328 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_6 ; empty space on disk = 533053077716992 bytes ... done
-Writing 901988904 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_7 ; empty space on disk = 533004103319552 bytes ... done
-Writing 878254976 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_8 ; empty space on disk = 532862340956160 bytes ... done
-Writing 820183192 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_9 ; empty space on disk = 532740445044736 bytes ... done
-Writing 765049552 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_10 ; empty space on disk = 532822499524608 bytes ... done
-Writing 724330952 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_11 ; empty space on disk = 532796775989248 bytes ... done
-Writing 786744608 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_12 ; empty space on disk = 532770033631232 bytes ... done
-Writing 612827672 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_13 ; empty space on disk = 532744107458560 bytes ... done
-Writing 664927600 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_14 ; empty space on disk = 532726201188352 bytes ... done
-Writing 759257240 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_15 ; empty space on disk = 532688282714112 bytes ... done
-Writing 882808512 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_16 ; empty space on disk = 532634647396352 bytes ... done
-Writing 784038112 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_17 ; empty space on disk = 532613178589184 bytes ... done
-Writing 698646536 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_18 ; empty space on disk = 532586005921792 bytes ... done
-Writing 732933200 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_19 ; empty space on disk = 532549117411328 bytes ... done
-Writing 724932408 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_20 ; empty space on disk = 532534380724224 bytes ... done
-Writing 746205336 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_21 ; empty space on disk = 532486055264256 bytes ... done
-Writing 868925560 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_22 ; empty space on disk = 532481143734272 bytes ... done
-Writing 743410288 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_23 ; empty space on disk = 532432614850560 bytes ... done
-Writing 691297888 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_24 ; empty space on disk = 532405529477120 bytes ... done
-Writing 789238856 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_25 ; empty space on disk = 532348028321792 bytes ... done
-Writing 906762616 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_26 ; empty space on disk = 532333405536256 bytes ... done
-Writing 795711120 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_27 ; empty space on disk = 532318768726016 bytes ... done
-Writing 869662600 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_28 ; empty space on disk = 532270598324224 bytes ... done
-Writing 752131312 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_29 ; empty space on disk = 532257717354496 bytes ... done
-Writing 714392872 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_30 ; empty space on disk = 532177890836480 bytes ... done
-Writing 808589784 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_31 ; empty space on disk = 532163713695744 bytes ... done
-Writing 754596224 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_32 ; empty space on disk = 532226967470080 bytes ... done
-Writing 702143624 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_33 ; empty space on disk = 532158737678336 bytes ... done
-Writing 838901584 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_34 ; empty space on disk = 532102738083840 bytes ... done
-Writing 848509888 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_35 ; empty space on disk = 532062000250880 bytes ... done
-Writing 896362048 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_36 ; empty space on disk = 532023615029248 bytes ... done
-Writing 846821760 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_37 ; empty space on disk = 532076560121856 bytes ... done
-Writing 787926944 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_38 ; empty space on disk = 532064161234944 bytes ... done
-Writing 750094472 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_39 ; empty space on disk = 532039533068288 bytes ... done
-Writing 873607400 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_40 ; empty space on disk = 532005740085248 bytes ... done
-Writing 901431200 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_41 ; empty space on disk = 531965380001792 bytes ... done
-Writing 814687344 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_42 ; empty space on disk = 531962715832320 bytes ... done
-Writing 846792216 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_43 ; empty space on disk = 531901178576896 bytes ... done
-Writing 823125776 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_44 ; empty space on disk = 531862516924416 bytes ... done
-Writing 835708584 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_45 ; empty space on disk = 531859536740352 bytes ... done
-Writing 817342536 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_46 ; empty space on disk = 531813637423104 bytes ... done
-Writing 643513920 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_47 ; empty space on disk = 531801594527744 bytes ... done
-Writing 829687472 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_48 ; empty space on disk = 531772549627904 bytes ... done
-Writing 754243088 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_49 ; empty space on disk = 531747564683264 bytes ... done
-Writing 838501976 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_50 ; empty space on disk = 531710322147328 bytes ... done
-Writing 897101784 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_51 ; empty space on disk = 531679657066496 bytes ... done
-Writing 743319864 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_52 ; empty space on disk = 531663711109120 bytes ... done
-Writing 702257840 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_53 ; empty space on disk = 531608013504512 bytes ... done
-Writing 686749840 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_54 ; empty space on disk = 531614028529664 bytes ... done
-Writing 881534560 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_55 ; empty space on disk = 531563864522752 bytes ... done
-Writing 903266664 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_56 ; empty space on disk = 531527650639872 bytes ... done
-Writing 685779152 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_57 ; empty space on disk = 531512223596544 bytes ... done
-Writing 598627912 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_58 ; empty space on disk = 531496132280320 bytes ... done
-Writing 836218432 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_59 ; empty space on disk = 531428607918080 bytes ... done
-Writing 892964976 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_60 ; empty space on disk = 531375080210432 bytes ... done
-Writing 737667768 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_61 ; empty space on disk = 531295981142016 bytes ... done
-Writing 757530672 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA_62 ; empty space on disk = 531310165622784 bytes ... done
-May 12 22:42:11 ... loading chunks from disk, packing SA...
-May 12 22:46:40 ... finished generating suffix array
-May 12 22:46:40 ... generating Suffix Array index
-May 12 22:49:47 ... completed Suffix Array index
-May 12 22:49:47 ..... processing annotations GTF
-Processing pGe.sjdbGTFfile=/home/kkchau/projects/RNAseq_Pipeline/references/gencode.v30.annotation.gtf, found:
-		208621 transcripts
-		1279686 exons (non-collapsed)
-		364419 collapsed junctions
-May 12 22:50:03 ..... finished GTF processing
-May 12 22:50:03   Loaded database junctions from the GTF file: /home/kkchau/projects/RNAseq_Pipeline/references/gencode.v30.annotation.gtf: 364419 total junctions
-
-WARNING: long repeat for junction # 263498 : chr15 88855522 88855578; left shift = 14; right shift = 255
-May 12 22:50:03   Finished preparing junctions
-May 12 22:50:03 ..... inserting junctions into the genome indices
-May 12 22:55:35   Finished SA search: number of new junctions=364360, old junctions=0
-May 12 22:56:21   Finished sorting SA indicesL nInd=145744000
-Genome size with junctions=3413999496  3340763136   73236360
-GstrandBit1=32   GstrandBit=32
-May 12 22:57:49   Finished inserting junction indices
-May 12 22:58:14   Finished SAi
-May 12 22:58:14 ..... finished inserting junctions into genome
-May 12 22:58:14 ... writing Genome to disk ...
-Writing 3413999496 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/Genome ; empty space on disk = 531263442780160 bytes ... done
-SA size in bytes: 26100930821
-May 12 22:58:18 ... writing Suffix Array to disk ...
-Writing 26100930821 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SA ; empty space on disk = 531257613090816 bytes ... done
-May 12 22:58:59 ... writing SAindex to disk
-Writing 8 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SAindex ; empty space on disk = 531226260013056 bytes ... done
-Writing 120 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SAindex ; empty space on disk = 531226260013056 bytes ... done
-Writing 1565873491 bytes into /home/kkchau/projects/RNAseq_Pipeline/references/STAR_INDEX/SAindex ; empty space on disk = 531226260013056 bytes ... done
-May 12 22:59:01 ..... finished successfully
-DONE: Genome generation, EXITING
+Jun 14 15:08:50 ... starting to generate Genome files
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 0  "chr1" chrStart: 0
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 1  "chr2" chrStart: 249036800
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 2  "chr3" chrStart: 491257856
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 3  "chr4" chrStart: 689700864
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 4  "chr5" chrStart: 880017408
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 5  "chr6" chrStart: 1061683200
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 6  "chr7" chrStart: 1232601088
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 7  "chr8" chrStart: 1391984640
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 8  "chr9" chrStart: 1537212416
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 9  "chr10" chrStart: 1675624448
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 10  "chr11" chrStart: 1809580032
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 11  "chr12" chrStart: 1944846336
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 12  "chr13" chrStart: 2078277632
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 13  "chr14" chrStart: 2192834560
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 14  "chr15" chrStart: 2300051456
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 15  "chr16" chrStart: 2402287616
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 16  "chr17" chrStart: 2492727296
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 17  "chr18" chrStart: 2576089088
+/Users/zhq/RNAseq_Pipeline/references/GRCh38.p12.genome.fa : chr # 18  "chr19" chrStart: 2656567296
