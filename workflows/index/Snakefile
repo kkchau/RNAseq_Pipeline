@@ -10,6 +10,11 @@ import os
 
 configfile: "../../config.yaml"
 
+subworkflow input_QC:
+    workdir: "../input_QC"
+    snakefile: "../input_QC/Snakefile"
+    configfile: "../../config.yaml"
+
 # Setup pipeline directories
 if not os.path.exists("data"):
     os.makedirs("data")
@@ -55,3 +60,18 @@ rule star_refIndex:
         "--genomeDir {params.outdir} "
         "--genomeFastaFiles {input[0]} "
         "--sjdbGTFfile {input[1]}"
+
+#rerun the fastqc for the trimmed data
+rule QC_trimmed:
+    """
+    This rule run fastqc on the trimmed data to see the improvement.
+    It will output the result html files in the input_QC folder.
+    """
+    input:
+        trim_1 = os.path.join("data",config["FASTQS"]["read1"] + ".trimmed.fastq"),
+        trim_2 = os.path.join("data",config["FASTQS"]["read2"] + ".trimmed.fastq")
+    output:
+        os.path.join("../../data/input_QC", config["FASTQS"]["read1"]+".trimmed_fastqc.html"),
+        os.path.join("../../data/input_QC", config["FASTQS"]["read2"]+".trimmed_fastqc.html")
+    shell:
+        "fastqc -o ../../data/input_QC {input[0]} {input[1]}"

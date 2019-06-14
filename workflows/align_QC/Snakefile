@@ -106,7 +106,7 @@ rule feature_counts:
     It also outputs stat info for the overall summrization results.
     """
     input:
-        alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".bam")),
+        alignment(os.path.join("../../data/STAR_ALIGN", config["FASTQS"]["prefix"] + ".STARAligned.sortedByCoord.out.bam")),
         os.path.join(config["GENOME_DIR"], config["GENOME_GTF"]),
         os.path.join(config["GENOME_DIR"], config["GENOME_FASTA"])
     output:
